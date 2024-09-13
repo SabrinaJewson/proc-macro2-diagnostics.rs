@@ -1,3 +1,4 @@
+#![allow(unexpected_cfgs)]
 #![cfg_attr(nightly_diagnostics, feature(proc_macro_diagnostic, proc_macro_span))]
 
 //! Diagnostic emulation on stable and nightly.
@@ -53,6 +54,20 @@
 //! On stable, due to limitations, any top-level, non-error diagnostics are
 //! emitted as errors. This will abort compilation. To avoid this, you may want
 //! to `cfg`-gate emitting non-error diagnostics to nightly.
+//!
+//! # Nightly detection
+//!
+//! If you want to opt in to better diagnostics on nightly compilers at the risk of your
+//! crate potentially breaking for future nightly versions, enable the `nightly` feature
+//! in your `Cargo.toml`:
+//!
+//! ```toml
+//! [dependencies]
+//! proc_macro2_diagnostics = { version = "0.10", features = ["nightly"] }
+//! ```
+//!
+//! This will cause `proc_macro2_diagnostics` to automatically detect whether you’re
+//! using a nightly compiler and if so, improve the diagnostics via unstable APIs.
 //!
 //! # Colors
 //!

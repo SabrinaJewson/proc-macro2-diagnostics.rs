@@ -13,6 +13,7 @@ documentation = "https://docs.rs/proc-macro2-diagnostics"
 [features]
 default = ["colors"]
 colors = ["yansi"]
+nightly = ["dep:version_check"]
 
 [dependencies]
 quote = "1.0"
@@ -25,7 +26,7 @@ default-features = false
 features = ["parsing", "printing"]
 
 [build-dependencies]
-version_check = "0.9.4"
+version_check = { version = "0.9.4", optional = true }
 
 [dev-dependencies]
 trybuild = "1.0"
