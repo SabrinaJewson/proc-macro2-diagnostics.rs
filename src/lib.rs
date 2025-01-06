@@ -58,12 +58,12 @@
 //! # Nightly detection
 //!
 //! If you want to opt in to better diagnostics on nightly compilers at the risk of your
-//! crate potentially breaking for future nightly versions, enable the `nightly` feature
+//! crate potentially breaking for future nightly versions, enable the `try_nightly` feature
 //! in your `Cargo.toml`:
 //!
 //! ```toml
 //! [dependencies]
-//! proc_macro2_diagnostics = { version = "0.10", features = ["nightly"] }
+//! proc_macro2_diagnostics = { version = "0.10", features = ["try_nightly"] }
 //! ```
 //!
 //! This will cause `proc_macro2_diagnostics` to automatically detect whether you’re
